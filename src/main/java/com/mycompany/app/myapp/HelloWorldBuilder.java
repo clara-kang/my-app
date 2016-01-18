@@ -35,12 +35,27 @@ import java.io.IOException;
  */
 public class HelloWorldBuilder extends Builder implements SimpleBuildStep {
 
-    private final String name;
+    private String name;
+    private Jenkins jenkins;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Jenkins getJenkins() {
+        return jenkins;
+    }
+
+    public void setJenkins(Jenkins jenkins) {
+        this.jenkins = jenkins;
+    }
 
     // Fields in config.jelly must match the parameter names in the "DataBoundConstructor"
     @DataBoundConstructor
     public HelloWorldBuilder(String name) {
+
         this.name = name;
+        this.jenkins = Jenkins.getInstance();
     }
 
     /**
@@ -58,14 +73,14 @@ public class HelloWorldBuilder extends Builder implements SimpleBuildStep {
         // Since this is a dummy, we just say 'hello world' and call that a build.
 
         // This also shows how you can consult the global configuration of the builder
+
         if (getDescriptor().getUseFrench())
             listener.getLogger().println("Bonjour, "+name+"!!!");
         else
             listener.getLogger().println("Hello, "+name+"!!!");
         try{
-            test_job1 = Jenkins.getInstance().createProject(FreeStyleProject.class, "test_job1");
+            test_job1 = jenkins.createProject(FreeStyleProject.class, "test_job1");
             test_job1.scheduleBuild(0,new TimerTrigger.TimerTriggerCause());
-
         }catch (java.io.IOException e){
             listener.getLogger().println("failed to create test job");
         }

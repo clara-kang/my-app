@@ -1,0 +1,21 @@
+Picking up existing exploded jenkins.war at /home/ehenkan/Learning/my-app/./target/jenkins-for-test
+Jan 14, 2016 2:25:39 PM org.jvnet.hudson.test.JenkinsRule createWebServer
+INFO: Running on http://localhost:54141/jenkins/
+Jan 14, 2016 2:25:40 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Started initialization
+Jan 14, 2016 2:25:45 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Listed all plugins
+Jan 14, 2016 2:25:45 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Prepared all plugins
+Jan 14, 2016 2:25:45 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Started all plugins
+Jan 14, 2016 2:25:45 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Augmented all extensions
+Jan 14, 2016 2:25:45 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Loaded all jobs
+Jan 14, 2016 2:25:55 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Completed initialization
+=== Starting testPerform(com.mycompany.app.myapp.HelloWorldBuilderTest)
+Hello, TestName!!!
+Jan 14, 2016 2:25:57 PM hudson.model.Run execute
+INFO: test_job1 #1 main build action completed: SUCCESS
